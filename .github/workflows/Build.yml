@@ -31,7 +31,6 @@ jobs:
       uses: jurplel/install-qt-action@v4
       with:
         dir: '${{ github.workspace }}/YUViewQt'
-        modules: 'core gui widgets'
         cache: 'true'
     - name: Install libde265
       run: |

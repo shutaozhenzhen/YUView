@@ -56,9 +56,9 @@ jobs:
         mkdir build
         cd build
         echo "Qmake Version:"
-        ${QT_ROOT_DIR}\bin\qmake --version
+        ${{ QT_ROOT_DIR }}\bin\qmake --version
         echo "Executing qmake..."
-        ${QT_ROOT_DIR}\bin\qmake CONFIG+=UNITTESTS ..
+        ${{ QT_ROOT_DIR }}\bin\qmake CONFIG+=UNITTESTS ..
         echo "Executing jom:"
         jom
     - name: Run Unittests
@@ -68,7 +68,7 @@ jobs:
         mkdir deploy
         cd deploy
         cp ../build/YUViewApp/YUView.exe .
-        ${QT_ROOT_DIR}\bin\windeployqt.exe --release --no-compiler-runtime YUView.exe
+        ${{ QT_ROOT_DIR }}\bin\windeployqt.exe --release --no-compiler-runtime YUView.exe
         cp ../openSSL/*.dll .
         mkdir decoder
         cp ..\libde265.dll decoder

@@ -58,7 +58,7 @@ jobs:
         echo "Qmake Version:"
         qmake --version
         echo "Executing qmake..."
-        qmake CONFIG+=UNITTESTS ..
+        qmake CONFIG+=UNITTESTS CONFIG+=debug ..
         echo "Executing jom:"
         jom
     - name: Run Unittests

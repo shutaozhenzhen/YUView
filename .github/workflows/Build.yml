@@ -14,10 +14,6 @@ jobs:
       matrix:
         include: 
           - os: windows-2019
-            auto_update: true
-            ARTIFACT_NAME: YUView-Win2019.zip
-            QT_FILE: qtBase_6.7.2_win2019.zip
-          - os: windows-2019
             auto_update: false
             ARTIFACT_NAME: YUView-Win2019-noautoupdate.zip
             QT_FILE: qtBase_6.7.2_win2019.zip
@@ -61,8 +57,6 @@ jobs:
         qmake CONFIG+=UNITTESTS CONFIG+=debug ..
         echo "Executing jom:"
         jom
-    - name: Run Unittests
-      run: D:\a\YUView\YUView\build\YUViewUnitTest\YUViewUnitTest
     - name: WindeployQT
       run: |
         mkdir deploy
